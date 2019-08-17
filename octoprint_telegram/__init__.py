@@ -276,11 +276,11 @@ class TelegramListener(threading.Thread):
 			command = command.split('_')[0]
 		self._logger.info("Got a command: '" + str(command.encode('utf-8')) + "' with parameter: '" + str(parameter.encode('utf-8')) + "' in chat " + str(message['message']['chat']['id']))
 		# is command  known? 
-		if command not in self.main.tcmd.commandDict:
+		#if command not in self.main.tcmd.commandDict:
 			# we dont know the command so skip the message
-			self._logger.warn("Previous command was an unknown command.")
-			self.main.send_msg("I do not understand you! " + self.gEmo('mistake'),chatID=chat_id)
-			raise ExitThisLoopException()
+			#self._logger.warn("Previous command was an unknown command.")
+			#self.main.send_msg("I do not understand you! " + self.gEmo('mistake'),chatID=chat_id)
+			#raise ExitThisLoopException()
 		# check if user is allowed to execute the command
 		if self.main.isCommandAllowed(chat_id,from_id,command):
 			# Track command
